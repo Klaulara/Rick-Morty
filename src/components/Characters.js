@@ -36,7 +36,7 @@ export default function Characters(props) {
                                 <span>{character.episode.length}</span>
                             </p>
                             <p>
-                                <span className="text-grey"></span>
+                                <span className="text-grey">Especie: </span>
                                 <span>{character.species}</span>
                             </p>
                         </div>

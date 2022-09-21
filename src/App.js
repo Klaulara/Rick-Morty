@@ -1,4 +1,4 @@
-import imageRickMorty from './img/rick-morty.png';
+import imageRickMorty from './img/rick-and-morty-rick.gif';
 import './App.css';
 import { useState } from "react";
 import Characters from './components/Characters';
@@ -8,10 +8,13 @@ function App() {
   const [characters, setCharacters] = useState(null);
 
   const reqApi = async () => {
-    const api = await fetch('https://rickandmortyapi.com/api/character')
-    const characterApi = await api.json();
-
-    setCharacters(characterApi.results);
+    let array =[]
+    for (let i = 1; i < 827; i++) {
+      const api = await fetch(`https://rickandmortyapi.com/api/character/${i}`)
+      const characterApi = await api.json();
+      array.push(characterApi);
+    }
+    setCharacters(array);
   };
 
   return (
